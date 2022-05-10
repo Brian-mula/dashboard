@@ -19,7 +19,7 @@
         <!-- here goes the user profile -->
         <nuxt-link
           to="/notificationPage"
-          class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-4"
+          class="inline-flex justify-center p-2 rounded-full text-gray-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-4"
         >
           <span class="sr-only">View notifications</span>
           <!-- Heroicon name: outline/bell -->
@@ -39,29 +39,60 @@
             />
           </svg>
         </nuxt-link>
+     <Menu as="div" class="relative inline-block text-left">
+    <div>
+      <MenuButton class="inline-flex justify-center w-full h-full rounded-full px-4 py-2  ">
         <img
           src="https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664__340.jpg"
           alt=""
-          class="h-8 w-8 rounded-full"
+          class="w-8 h-8 rounded-full"
         />
-        <!-- user profile -->
-        <!-- dummy user -->
+       
+      </MenuButton>
+    </div>
 
+    <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
+      <MenuItems class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <div class="py-1">
+          <MenuItem v-slot="{ active }">
+            <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">Account settings</a>
+          </MenuItem>
+          
+          <form method="POST" action="#">
+            <MenuItem v-slot="{ active }">
+              <button type="submit" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block w-full text-left px-4 py-2 text-sm']">Sign out</button>
+            </MenuItem>
+          </form>
+        </div>
+      </MenuItems>
+    </transition>
+  </Menu>
         <!-- dummy user -->
       </div>
     </div>
   </nav>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      /* eslint-disable */
-      isOpen: false,
-    };
+<script >
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+
+export default{
+  components:{
+      Menu,
+      MenuButton,
+      MenuItem,
+      MenuItems
   },
-};
+  setup(){
+
+    return{
+      
+      
+
+    }
+  }
+}
+
 </script>
 
 <style></style>

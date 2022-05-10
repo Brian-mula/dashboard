@@ -1,9 +1,9 @@
 <template>
    <div class="overflow-y-auto py-4 px-3 rounded dark:bg-blue-500 ">
-       <a href="#" class="flex items-center pl-2.5 mb-8 pt-3">
+       <nuxt-link to="/" class="flex items-center pl-2.5 mb-8 pt-3">
         <img src="https://cdn.pixabay.com/photo/2020/08/05/13/11/eco-5465429__340.png" class="h-6 mr-3 sm:h-7 rounded-full" alt="Flowbite Logo">
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">TAQUANA</span>
-      </a>
+      </nuxt-link>
       <ul class="space-y-2">
          <li>
           <nuxt-link to="/liveOrders" class="flex items-center p-2 text-base font-normal text-gray-100 rounded-lg dark:text-white hover:bg-blue-900 dark:hover:bg-blue-800">
